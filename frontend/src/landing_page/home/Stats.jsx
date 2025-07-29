@@ -6,7 +6,7 @@ function Stats() {
     <div className='container'>
       <div className='row p-5'>
         <div className='col-6 p-5'>
-          <h2 className='mb-5' style={{ fontSize: '1.25rem' }}>Trust with confidence</h2>
+          <h2 className='mb-5' style={{fontSize:'2.1rem'}}>Trust with confidence</h2>
           <h3 className='' style={{ fontSize: '1.25rem' }}>
             Customer-first always
           </h3>

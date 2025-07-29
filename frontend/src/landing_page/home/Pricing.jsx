@@ -3,16 +3,16 @@
 import React from 'react';
 function Pricing() {
   return (
-    <div className='container'>
+    <div className='container p-10 mb-5'>
       <div className='row'>
         <div className='col-4'>
-          <h2 style={{ fontSize: '1.55rem' }}>Unbeatable pricing</h2>
+          <h2 style={{fontSize:'1.85rem'}}>Unbeatable pricing</h2>
           <p>
             We pioneered the concept of discount broking and price transparency
             in India. Flat fees and no hidden charges.
           </p>
           <a href=''>
-            See Pricing <i class='fa-solid fa-arrow-right'></i>
+            See Pricing <i className='fa-solid fa-arrow-right'></i>
           </a>
         </div>
         <div className='col-2'></div>
