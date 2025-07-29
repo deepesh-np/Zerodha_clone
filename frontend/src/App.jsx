@@ -10,6 +10,7 @@ import About from './landing_page/about/AboutPage';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Navbar from '../src/landing_page/Navbar';
 import Footer from '../src/landing_page/Footer';
+import NotFound from './landing_page/NotFound';
 function App() {
   return (
     <BrowserRouter>
@@ -20,6 +21,7 @@ function App() {
         <Route path='/about' element={<About />} />
         <Route path='/product' element={<Product />} />
         <Route path='/pricing' element={<Pricing />} />
+        <Route path='*' element={<NotFound />} />
         {/* <Route path='/support' element={<Support />} /> */}
       </Routes>
       <Footer />
