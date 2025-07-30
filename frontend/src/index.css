@@ -96,3 +96,8 @@ html {
   line-height: 2;
   margin-bottom: 10px;
 }
+.universe-logo.p {
+  line-height: 18px;
+  display: block;
+  margin-top: 10px;
+}
