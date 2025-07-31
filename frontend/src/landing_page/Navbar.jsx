@@ -61,11 +61,11 @@ function Navbar() {
                   Pricing
                 </Link>
               </li>
-              {/* <li className='nav-item'>
+              <li className='nav-item'>
                 <Link className='nav-link active' to='/support'>
                   Support
                 </Link>
-              </li> */}
+              </li>
             </ul>
           </form>
         </div>
