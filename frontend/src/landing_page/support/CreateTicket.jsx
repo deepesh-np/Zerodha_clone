@@ -46,59 +46,59 @@ function CreateTicket() {
         </div>
         <div className='col-4 p-5 mt-2 mb-2'>
           <h4 className=''>
-            <i class='fa fa-plus-circle' aria-hidden='true'></i> Account Opening
+            <i class='fa fa-plus-circle' aria-hidden='true'></i> Support
           </h4>
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Online Account Opening
+            Contact us
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Offline Account Opening
+            Support portal
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Company, Partnership and HUF Account
+            How to file a complaint?
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Opening
+            Status of your complaints
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            NRI Account Opening
+            Bulletin
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Charges at Zerodha
+            Circulars
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Zerodha IDFC FIRST Bank 3-in-1 Account
+            Z-Connect blog
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Getting Started
+            Downloads
           </a>
           <br />
         </div>
         <div className='col-4 p-5 mt-2 mb-2'>
           <h4 className=''>
-            <i class='fa fa-plus-circle' aria-hidden='true'></i> Account Opening
+            <i class='fa fa-plus-circle' aria-hidden='true'></i> Company
           </h4>
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Online Account Opening
+            About
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Offline Account Opening
+            Philosophy
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Company, Partnership and HUF Account
+            Press and media
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Opening
+            Careers
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
@@ -106,15 +106,15 @@ function CreateTicket() {
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Charges at Zerodha
+            Zerodha Cares (CSR)
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Zerodha IDFC FIRST Bank 3-in-1 Account
+            Zerodha tech
           </a>
           <br />
           <a href='' style={{ textDecoration: 'none', lineHeight: '2.5' }}>
-            Getting Started
+            Open source
           </a>
           <br />
         </div>
