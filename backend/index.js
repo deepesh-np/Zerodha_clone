@@ -3,6 +3,8 @@
 require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
+const bodyParser = require('body-parser');
+const cors = require('cors');
 
 const url = process.env.MONGO_URL;
 main().catch((err) => console.log(err));
@@ -20,9 +22,12 @@ const PORT = process.env.PORT || 3002;
 
 const app = express();
 
-// const { HoldingsModel } = require('./model/HoldingsModel');
+app.use(cors());
+app.use(bodyParser.json());
 
-// const { PositionModel } = require('./model/PositionModel');
+const { HoldingsModel } = require('./model/HoldingsModel');
+
+const { PositionModel } = require('./model/PositionModel');
 // app.get('/addHoldings', async (req, res) => {
 //   let tempHoldings = [
 //     {
@@ -191,6 +196,16 @@ const app = express();
 //   });
 //   res.send('Done!');
 // });
+
+app.get('/allHoldings', async (req, res) => {
+  let allHoldings = await HoldingsModel.find({});
+  res.json(allHoldings);
+});
+
+app.get('/allPosition', async (req, res) => {
+  let allPosition = await PositionModel.find({});
+  res.json(allPosition);
+});
 
 app.listen(PORT, () => {
   console.log('App Started');
