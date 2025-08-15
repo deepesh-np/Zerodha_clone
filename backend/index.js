@@ -26,7 +26,7 @@ app.use(cors());
 app.use(bodyParser.json());
 
 const { HoldingsModel } = require('./model/HoldingsModel');
-
+const { OrdersModel } = require('./model/OrdersModel');
 const { PositionModel } = require('./model/PositionModel');
 // app.get('/addHoldings', async (req, res) => {
 //   let tempHoldings = [
@@ -205,6 +205,17 @@ app.get('/allHoldings', async (req, res) => {
 app.get('/allPosition', async (req, res) => {
   let allPosition = await PositionModel.find({});
   res.json(allPosition);
+});
+
+app.post('/newOrder', async (req, res) => {
+  let newOrder = new OrdersModel({
+    name: req.body.name,
+    qty: req.body.qty,
+    price: req.body.price,
+    mode: req.body.mode,
+  });
+  newOrder.save();
+  res.send('Order saved');
 });
 
 app.listen(PORT, () => {
