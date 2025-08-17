@@ -4,46 +4,38 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
-// import { Link, useNavigate } from 'react-router-dom';
 
-const Signup = () => {
+const Login = () => {
   const [loading, setLoading] = useState(false);
   const navigate = useNavigate();
   const [inputValue, setInputValue] = useState({
     email: '',
     password: '',
-    username: '',
   });
-  const { email, password, username } = inputValue;
+  const { email, password } = inputValue;
+
   const handleOnChange = (e) => {
     const { name, value } = e.target;
-    setInputValue({
-      ...inputValue,
-      [name]: value,
-    });
+    setInputValue({ ...inputValue, [name]: value });
   };
 
-  const handleError = (err) =>
-    toast.error(err, {
-      position: 'bottom-left',
-    });
+  const handleError = (err) => toast.error(err, { position: 'bottom-left' });
   const handleSuccess = (msg) =>
-    toast.success(msg, {
-      position: 'bottom-right',
-    });
+    toast.success(msg, { position: 'bottom-right' });
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
     try {
       const { data } = await axios.post(
-        'http://localhost:3002/signup',
+        'http://localhost:3002/login',
         inputValue,
         { withCredentials: true }
       );
       if (data.success) {
-        handleSuccess(data.message);
-        setTimeout(() => navigate('/'), 1000); // 👈 replace window.location.href
+          handleSuccess(data.message);
+        // OR if you want to redirect to another port:
+        window.location.href = 'http://localhost:5174/';
       } else {
         handleError(data.message);
       }
@@ -53,15 +45,16 @@ const Signup = () => {
       );
     } finally {
       setLoading(false);
-      setInputValue({ email: '', password: '', username: '' });
+      setInputValue({ email: '', password: '' });
     }
   };
+
   return (
     <div className='container d-flex justify-content-center align-items-center min-vh-100'>
       <div
         className='card shadow-lg p-4'
         style={{ maxWidth: '400px', width: '100%' }}>
-        <h3 className='text-center mb-4'>Create Account</h3>
+        <h3 className='text-center mb-4'>Login to Your Account</h3>
         <form onSubmit={handleSubmit}>
           <div className='mb-3'>
             <label htmlFor='email' className='form-label'>
@@ -75,21 +68,6 @@ const Signup = () => {
               value={email}
               onChange={handleOnChange}
               placeholder='Enter your email'
-              required
-            />
-          </div>
-          <div className='mb-3'>
-            <label htmlFor='username' className='form-label'>
-              Username
-            </label>
-            <input
-              type='text'
-              name='username'
-              className='form-control'
-              id='username'
-              value={username}
-              onChange={handleOnChange}
-              placeholder='Enter your username'
               required
             />
           </div>
@@ -110,14 +88,14 @@ const Signup = () => {
           </div>
           <button
             type='submit'
-            className='btn btn-primary w-100'
+            className='btn btn-success w-100'
             disabled={loading}>
-            {loading ? 'Signing up...' : 'Sign Up'}
+            {loading ? 'Logging in...' : 'Login'}
           </button>
           <p className='text-center mt-3'>
-            Already have an account?{' '}
-            <Link to='/login' className='text-decoration-none'>
-              Login
+            Don’t have an account?{' '}
+            <Link to='/signup' className='text-decoration-none'>
+              Signup
             </Link>
           </p>
         </form>
@@ -127,4 +105,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

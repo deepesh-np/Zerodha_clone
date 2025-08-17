@@ -1,9 +1,10 @@
 /** @format */
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {
+  const isAuthenticated = localStorage.getItem('token'); // check if logged in
+
   return (
     <nav
       className='navbar navbar-expand-lg border-bottom'
@@ -38,14 +39,29 @@ function Navbar() {
                   Home
                 </Link>
               </li>
-              <li className='nav-item'>
-                <Link
-                  className='nav-link active'
-                  aria-current='page'
-                  to='/signup'>
-                  Signup
-                </Link>
-              </li>
+
+              {/* Conditional rendering */}
+              {!isAuthenticated ? (
+                <>
+                  <li className='nav-item'>
+                    <Link className='nav-link active' to='/signup'>
+                      Signup
+                    </Link>
+                  </li>
+                  <li className='nav-item'>
+                    <Link className='nav-link active' to='/login'>
+                      Login
+                    </Link>
+                  </li>
+                </>
+              ) : (
+                <li className='nav-item'>
+                  <Link className='nav-link active' to='/dashboard'>
+                    Dashboard
+                  </Link>
+                </li>
+              )}
+
               <li className='nav-item'>
                 <Link className='nav-link active' to='/about'>
                   About

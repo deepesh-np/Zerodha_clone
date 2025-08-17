@@ -3,6 +3,7 @@
 import React from 'react';
 import HomePage from './landing_page/home/HomePage';
 import Signup from './landing_page/signup/Signup';
+import Login from './landing_page/signup/Login';
 import Pricing from './landing_page/pricing/PricingPage';
 import Product from './landing_page/products/ProductPage';
 import About from './landing_page/about/AboutPage';
@@ -18,6 +19,7 @@ function App() {
       <Routes>
         <Route path='/' element={<HomePage />} />
         <Route path='/signup' element={<Signup />} />
+        <Route path='/login' element={<Login />} />
         <Route path='/about' element={<About />} />
         <Route path='/product' element={<Product />} />
         <Route path='/pricing' element={<Pricing />} />
